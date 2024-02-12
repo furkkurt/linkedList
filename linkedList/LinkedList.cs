@@ -4,19 +4,19 @@ namespace linkedList
     public class LinkedList
     {
         private Node head;
-        private int size;
+        private int NumberOfElements;
 
         public LinkedList()
         {
             this.head = null;
-            this.size = 0;
+            this.NumberOfElements = 0;
 
         }
 
         public void Add(object o)
         {
             this.head = new Node(o, this.head);
-            size++;
+            NumberOfElements++;
         }
 
         public void Remove()
@@ -24,17 +24,17 @@ namespace linkedList
             if (this.head != null)
             {
                 this.head = this.head.Next;
-                size--;
+                NumberOfElements--;
             }
 
         }
 
         public int Size
         {
-            get { return this.size; }
+            get { return this.NumberOfElements; }
         }
 
-        public object Get(int index)
+        public object GetElement(int index)
         {
             Node current = this.head;
             for (int i = 0; i < index; i++)
@@ -46,11 +46,11 @@ namespace linkedList
         public override string ToString()
         {
             String str = "";
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < NumberOfElements; i++)
             {
                 str += i;
                 str += ": ";
-                str += this.Get(i);
+                str += this.GetElement(i);
                 str += "\n";
             }
             return str;
@@ -58,10 +58,10 @@ namespace linkedList
 
         public bool Contains(object o)
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < NumberOfElements; i++)
             {
 
-                if (o.Equals(Get(i)))
+                if (o.Equals(GetElement(i)))
                     return true;
             }
 
