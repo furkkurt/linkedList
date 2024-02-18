@@ -6,6 +6,12 @@ namespace linkedList
     {
         public static void Main(string[] args)
         {
+            TestStack();
+
+        }
+
+        public static void TestLinkedList()
+        {
             LinkedList list = new LinkedList();
             list.Add(1);
             list.Add(2);
@@ -16,7 +22,19 @@ namespace linkedList
             list.Remove();
             Console.WriteLine(list.ToString());
             Console.WriteLine(list.Contains(3));
+        }
 
+        public static void TestStack()
+        {
+            Stack stack = new Stack(3);
+            stack.Push("dos");
+            stack.Push(1);
+            stack.Push("Furkan");
+            stack.Push("Kurt");
+            Console.WriteLine(stack.ToString());
+            stack.Pop();
+            stack.Push("Kurt");
+            Console.WriteLine(stack.ToString());
         }
     }
 }
