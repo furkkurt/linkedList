@@ -2,7 +2,7 @@
 
 namespace linkedList
 {
-    class MainClass
+    class MainClass 
     {
         public static void Main(string[] args)
         {
@@ -10,9 +10,9 @@ namespace linkedList
 
         }
 
-        public static void TestLinkedList()
+        public static void TestLinkedList() 
         {
-            LinkedList list = new LinkedList();
+            LinkedList<object> list = new LinkedList<object>();
             list.Add(1);
             list.Add(2);
             list.Add("Hello World!");
@@ -26,7 +26,7 @@ namespace linkedList
 
         public static void TestStack()
         {
-            Stack stack = new Stack(3);
+            Stack<object> stack = new Stack<object>(3);
             stack.Push("dos");
             stack.Push(1);
             stack.Push("Furkan");

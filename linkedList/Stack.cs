@@ -1,7 +1,7 @@
 ﻿using System;
 namespace linkedList
 {
-    public class Stack : LinkedList
+    public class Stack <T>: LinkedList<T>
     {
         private int maxNumberOfElements;
         public bool IsEmpty;

@@ -1,12 +1,12 @@
 ﻿using System;
 namespace linkedList
 {
-    public class Node
+    public class Node <T>
     {
         private object data;
-        private Node next;
+        private Node<T> next;
 
-        public Node(object data, Node next)
+        public Node(object data, Node<T> next)
         {
             this.data = data;
             this.next = next;
@@ -18,7 +18,7 @@ namespace linkedList
             set { this.data = value; }
         }
 
-        public Node Next
+        public Node<T> Next
         {
             get { return this.next; }
             set { this.next = value; }

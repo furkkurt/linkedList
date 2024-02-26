@@ -1,9 +1,9 @@
 ﻿using System;
 namespace linkedList
 {
-    public class LinkedList
+    public class LinkedList <T>
     {
-        private Node head;
+        private Node<T> head;
         private int NumberOfElements;
 
         public LinkedList()
@@ -15,7 +15,7 @@ namespace linkedList
 
         public void Add(object o)
         {
-            this.head = new Node(o, this.head);
+            this.head = new Node<T>(o, this.head);
             NumberOfElements++;
         }
 
@@ -36,7 +36,7 @@ namespace linkedList
 
         public object GetElement(int index)
         {
-            Node current = this.head;
+            Node<T> current = this.head;
             for (int i = 0; i < index; i++)
                 current = current.Next;
 
