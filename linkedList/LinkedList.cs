@@ -1,8 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace linkedList
 {
-    public class LinkedList <T>
+    public class LinkedList<T> : IEnumerable<T>
     {
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         private Node<T> head;
         private int NumberOfElements;
 
@@ -67,5 +79,8 @@ namespace linkedList
 
             return false;
         }
+
+
+
     }
 }
