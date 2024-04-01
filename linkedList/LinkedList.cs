@@ -89,27 +89,26 @@ namespace linkedList
             return false;
         }
 
-        public static T Find<T>(LinkedList<T> list, Predicate<T> P)
+        public T Find<T>(Predicate<T> P)
         {
-            foreach (T elem in list)
+            for (int i = 0; i < NumberOfElements; i++)
             {
-                if (P(elem))
-                    return elem;
+
+                if (P((T)GetElement(i)))
+                    return (T)GetElement(i);
             }
             return default(T);
         }
 
-        public static T[] Filter<T>(LinkedList<T> list, Predicate<T> P)
+        public T[] Filter(Predicate<T> P)
         {
             List<T> filteredList = new List<T>();
-            foreach (T elem in list)
+            for (int i = 0; i < NumberOfElements; i++)
             {
-                if (P(elem))
-                {
-                    filteredList.Add(elem);
-                }
-
+                if (P((T)GetElement(i)))
+                    filteredList.Add((T)GetElement(i));
             }
+
             return filteredList.ToArray();
         }
 

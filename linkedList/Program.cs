@@ -40,6 +40,8 @@ namespace linkedList
             stack.Pop();
             stack.Push("Kurt");
             Console.WriteLine(stack.ToString());
+            Predicate<string> isTwo = x => x == "dos";
+            Console.WriteLine("Two?", stack.Find(isTwo));
         }
     }
 }
