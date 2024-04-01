@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace linkedList
@@ -7,13 +8,21 @@ namespace linkedList
     {
         public IEnumerator<T> GetEnumerator()
         {
-            return this.GetEnumerator();
+            Node<T> current = head;
+            while (current != null)
+            {
+                yield return (T)current.Data;
+                current = current.Next;
+            }
         }
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            return GetEnumerator();
+            // this will invoke the public generic
+            // version, so there is no recursion
+            return this.GetEnumerator();
         }
+
 
         private Node<T> head;
         private int NumberOfElements;
@@ -80,7 +89,74 @@ namespace linkedList
             return false;
         }
 
+        public static T Find<T>(LinkedList<T> list, Predicate<T> P)
+        {
+            foreach (T elem in list)
+            {
+                if (P(elem))
+                    return elem;
+            }
+            return default(T);
+        }
 
+        public static T[] Filter<T>(LinkedList<T> list, Predicate<T> P)
+        {
+            List<T> filteredList = new List<T>();
+            foreach (T elem in list)
+            {
+                if (P(elem))
+                {
+                    filteredList.Add(elem);
+                }
 
+            }
+            return filteredList.ToArray();
+        }
+
+        public static IEnumerable<T2> Map<T1, T2>(LinkedList<T1> list, Func<T1, T2> f)
+        {
+            LinkedList<T2> mappedList = new LinkedList<T2>();
+            foreach (T1 elem in list)
+            {
+                mappedList.Add(f(elem));
+
+            }
+            return mappedList;
+        }
+
+        public static T2 Reduce<T1, T2>(IEnumerable<T1> enumerable, Func<T2, T1, T2> f)
+        {
+            T2 result = default(T2);
+            foreach (T1 elem in enumerable)
+            {
+                result = f(result, elem);
+            }
+            return result;
+        }
+
+        public static LinkedList<T> InvertList<T>(LinkedList<T> list)
+        {
+            LinkedList<T> invertedList = new LinkedList<T>();
+
+            for (int i = list.Size - 1; i >= 0; i--)
+            {
+                invertedList.Add(list.GetElement(i));
+            }
+
+            return invertedList;
+        }
+
+        public static void ForEach<T>(IEnumerable<T> e, Action<T> a)
+        {
+            foreach (T elem in e)
+            {
+                a(elem);
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

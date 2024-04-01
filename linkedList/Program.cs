@@ -22,6 +22,11 @@ namespace linkedList
             list.Remove();
             Console.WriteLine(list.ToString());
             Console.WriteLine(list.Contains(3));
+
+            foreach (object i in list)
+            {
+                Console.WriteLine(i);
+            }
         }
 
         public static void TestStack()

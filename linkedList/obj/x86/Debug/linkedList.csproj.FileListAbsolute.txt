@@ -4,3 +4,9 @@
 /home/furkan/Documents/projects/c#/linkedList/linkedList/bin/Debug/linkedList.pdb
 /home/furkan/Documents/projects/c#/linkedList/linkedList/obj/x86/Debug/linkedList.exe
 /home/furkan/Documents/projects/c#/linkedList/linkedList/obj/x86/Debug/linkedList.pdb
+/home/furkan/Downloads/linkedList/linkedList/bin/Debug/linkedList.exe
+/home/furkan/Downloads/linkedList/linkedList/bin/Debug/linkedList.pdb
+/home/furkan/Downloads/linkedList/linkedList/obj/x86/Debug/linkedList.csproj.AssemblyReference.cache
+/home/furkan/Downloads/linkedList/linkedList/obj/x86/Debug/linkedList.csproj.CoreCompileInputs.cache
+/home/furkan/Downloads/linkedList/linkedList/obj/x86/Debug/linkedList.exe
+/home/furkan/Downloads/linkedList/linkedList/obj/x86/Debug/linkedList.pdb
